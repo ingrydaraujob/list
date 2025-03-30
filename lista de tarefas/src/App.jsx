@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  // Estado para armazenar a lista de tarefas
+  // armazenamento da lista de tarefas
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -27,7 +27,7 @@ function App() {
     }
   ]);
 
-  // Estados para controle do formulário
+  //controle do formulário
   const [newTodoText, setNewTodoText] = useState('');
   const [newTodoCategory, setNewTodoCategory] = useState('Trabalho');
   const [newTodoPriority, setNewTodoPriority] = useState('media');
@@ -54,7 +54,7 @@ function App() {
   };
 
   /**
-   * Remove uma tarefa da lista
+   * Remove tarefa da lista
    * @param {number} id - ID da tarefa a ser removida
    */
   const removeTodo = (id) => {
@@ -76,7 +76,7 @@ function App() {
    * Combina filtro de categoria com busca por texto
    */
   const filteredTodos = todos.filter(todo => {
-    // Filtro por categoria/status
+    
     const categoryMatch = 
       filter === 'Todas' || 
       (filter === 'Completas' && todo.isCompleted) ||
@@ -101,15 +101,15 @@ function App() {
     const priorityOrder = { alta: 1, media: 2, baixa: 3 };
     return priorityOrder[a.priority] - priorityOrder[b.priority];
   });
-
-  return (
+  
+  return ( 
     <div className="app">
       <header>
-        <h1>Organizador Profissional</h1>
-        <p>Gerencie suas tarefas diárias com eficiência</p>
+        <h1>Lista de tarefas</h1>
+        <p>Gerencie suas tarefas diárias</p>
       </header>
       
-      {/* Área de adição de novas tarefas */}
+      {/* adicionar novas tarefas */}
       <div className="add-todo">
         <input
           type="text"
