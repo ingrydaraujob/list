@@ -101,8 +101,8 @@ function App() {
     const priorityOrder = { alta: 1, media: 2, baixa: 3 };
     return priorityOrder[a.priority] - priorityOrder[b.priority];
   });
-  
-  return ( 
+
+  return (
     <div className="app">
       <header>
         <h1>Lista de tarefas</h1>
